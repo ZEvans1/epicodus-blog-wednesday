@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{#block "title"}}Blog{{/block}}</title>
+
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+</head>
+<body>
+<h1>Post list!</h1>
+
+{{#if posts}}
+{{#each posts }}
+<p>Current post:</p>
+<p>{{ content }} <a href="/posts/{{id}}">read more...</a></p>
+{{/each}}
+{{else}}
+<p>No posts!</p>
+{{/if}}
+
+<!--end main template-->
+{{#block "footer"}}
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted"><a href="/posts/delete">DELETE ALL POSTS</a></p>
+    </div>
+</footer>
+</body>
+</html>
+{{/block}}
